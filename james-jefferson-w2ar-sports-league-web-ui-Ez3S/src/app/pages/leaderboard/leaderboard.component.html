@@ -1,0 +1,83 @@
+
+<style>
+  table {
+    color: #4b5c58;
+  }
+
+  .table thead th  {
+  font-size: 12px;
+  background-color: #e4edf2;
+  height: 40px;
+}
+
+.table td, .table th {
+  height: 70px;
+  vertical-align: middle;
+  border: none;
+  border-bottom: solid 1px #e4edf2;
+}
+
+ .table tr:nth-child(even) {
+  background-color: #f6f7f7;
+ }
+
+ 
+.table-cell {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.table-cell-bold {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.gd {
+  display: none;
+  
+}
+
+@media (max-width: 750px) {
+  .stadium {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .date {
+    display: none;
+  }
+  .gf,.ga {
+    display: none;
+  }
+  .gd {
+    display: block;
+  }
+}
+
+</style>
+
+<h1 class="heading p-0">{{title}}</h1>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col-7">Team Name</th>
+      <th scope="col">MP</th>
+      <th scope="col" class="gf">GF</th>
+      <th scope="col" class="ga">GA</th>
+      <th scope="col" class="gd">GD</th>
+      <th scope="col">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of teams">
+      <th scope="row" class="col-7 table-cell-bold"><img src="https://flagsapi.codeaid.io/{{team.name}}.png" alt='' width="53px" height="37px" class="mr-2"> {{team.name}}</th>
+      <td class="table-cell">{{team.played}}</td>
+      <td class="table-cell gf">{{team.goalsFor}}</td>
+      <td class="table-cell ga">{{team.goalsAgainst}}</td>
+      <td class="table-cell gd">{{team.goalDifference}}</td>
+      <td class="table-cell-bold text-primary">{{team.points}}</td>
+    </tr>
+  </tbody>
+</table>
+
+ 

@@ -1,0 +1,67 @@
+
+<style>
+  table {
+    color: #4b5c58;
+  }
+
+  .table thead th  {
+  font-size: 12px;
+  background-color: #e4edf2;
+  height: 40px;
+}
+
+.table td, .table th {
+  height: 70px;
+  vertical-align: middle;
+  border: none;
+  border-bottom: solid 1px #e4edf2;
+}
+
+ .table tr:nth-child(even) {
+  background-color: #f6f7f7;
+ }
+
+ 
+.table-cell {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.table-cell-bold {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: 750px) {
+  .stadium {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .date {
+    display: none;
+  }
+}
+
+</style>
+<h1 class="heading p-0">{{title}}</h1>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col" class="date">Date/Time</th>
+      <th scope="col" class="stadium">Stadium</th>
+      <th scope="col" class="text-sm-right">Home Team</th>
+      <th scope="col"></th>
+      <th scope="col">Away Team</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let match of matches">
+      <th class="table-cell date" scope="row">{{match.matchDate}}</th>
+      <td class="stadium">{{match.stadium}}</td>
+      <td class="table-cell-bold text-sm-right">{{match.awayTeam}} <img src="https://flagsapi.codeaid.io/{{match.awayTeam}}.png" alt='' width="53px" height="37px" class="ml-2"> </td>
+      <td class="table-cell-bold">{{match.homeTeamScore}} : {{match.awayTeamScore}}</td>
+      <td class="table-cell-bold"> <img src="https://flagsapi.codeaid.io/{{match.homeTeam}}.png" alt='' width="53px" height="37px" class="mr-2"> {{match.homeTeam}}</td>
+    </tr>
+  </tbody>
+</table>

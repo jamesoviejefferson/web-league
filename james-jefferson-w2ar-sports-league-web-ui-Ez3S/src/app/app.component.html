@@ -1,0 +1,26 @@
+<header class="header">
+  <img src="../assets/images/logo.svg" class="logo" alt="">
+  <div class="d-flex align-items-center wrap">
+
+    <div class="d-flex">
+      <img src="../assets/images/schedule.png" alt="" height="25px">
+      <a routerLink="/schedule" class="link">Schedule</a>
+    </div>
+
+    <div class="d-flex" [ngStyle]="{marginLeft:'40px'}">
+      <img src="../assets/images/leaderboard.png" alt="" height="25px">
+      <a routerLink="/leaderboard" class="link">Leaderboard</a>
+    </div>
+  </div>
+</header>
+
+
+<div class="d-flex justify-content-between flex-column">
+  <div class="contain">
+    <router-outlet></router-outlet>
+  </div>
+  <footer class="footer d-flex align-items-center justify-content-end">
+    <h6 class="m-0">API Version: 1.0</h6>
+  </footer>
+
+</div>
